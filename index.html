@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vijayanand Puppala &middot; Quality Engineering Manager</title>
+
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('resume-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+<style>
+  :root {
+    --bg: #0a0f24;
+    --panel: #121937;
+    --panel-2: #0f1530;
+    --border: #1f2a55;
+    --border-2: #2a3a72;
+    --cyan: #3ec9d6;
+    --cyan-2: #6ee7ff;
+    --purple: #a855f7;
+    --green: #10b981;
+    --amber: #f59e0b;
+    --pink: #ec4899;
+    --blue: #3b82f6;
+    --red: #ef4444;
+    --white: #f2f5ff;
+    --lgray: #cdd5ee;
+    --mgray: #94a3c7;
+    --dgray: #6b7aa3;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  [data-theme="light"] {
+    --bg: #ffffff;
+    --panel: #f1f5f9;
+    --panel-2: #f8fafc;
+    --border: #dbe3f3;
+    --border-2: #c6d1ea;
+    --cyan: #0891b2;
+    --cyan-2: #0e7490;
+    --purple: #7c3aed;
+    --green: #059669;
+    --amber: #b45309;
+    --pink: #be185d;
+    --blue: #1d4ed8;
+    --red: #b91c1c;
+    --white: #0f172a;
+    --lgray: #334155;
+    --mgray: #64748b;
+    --dgray: #94a3b8;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); font-family: var(--font); color: var(--white); }
+
+  .theme-toggle {
+    position: fixed; top: 18px; right: 18px; z-index: 1000;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--panel); border: 1px solid var(--border-2);
+    color: var(--white); display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: transform 0.15s ease;
+  }
+  .theme-toggle:hover { transform: scale(1.08); }
+  .theme-toggle iconify-icon { font-size: 18px; }
+
+  nav.dots { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 900; display: flex; flex-direction: column; gap: 10px; }
+  nav.dots a { width: 9px; height: 9px; border-radius: 50%; background: var(--border-2); display: block; transition: all .2s; }
+  nav.dots a:hover, nav.dots a.active { background: var(--cyan); transform: scale(1.3); }
+  @media (max-width: 900px) { nav.dots { display: none; } }
+
+  section { max-width: 1040px; margin: 0 auto; padding: 70px 32px; }
+  .kicker { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--cyan); margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+  .kicker iconify-icon { font-size: 16px; }
+  h2.sec-title { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 8px; }
+  p.sec-lede { color: var(--mgray); font-size: 15px; margin: 0 0 28px; max-width: 720px; line-height: 1.6; }
+
+  /* ---------- HERO ---------- */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; padding: 40px 32px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(62,201,214,0.16), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(168,85,247,0.16), transparent 45%),
+      radial-gradient(circle at 75% 85%, rgba(236,72,153,0.13), transparent 45%),
+      radial-gradient(circle at 10% 85%, rgba(245,158,11,0.12), transparent 45%);
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 1040px; margin: 0 auto; width: 100%; }
+  .hero-name {
+    font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 14px; color: var(--cyan-2);
+  }
+  .hero h1 {
+    font-size: 50px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin: 0 0 14px;
+    background: linear-gradient(100deg, var(--cyan-2) 0%, var(--blue) 30%, var(--purple) 62%, var(--pink) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero .role { font-size: 19px; font-weight: 600; color: var(--white); margin: 0 0 16px; }
+  .hero .blurb { font-size: 16px; color: var(--mgray); max-width: 640px; line-height: 1.6; margin: 0 0 26px; }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+  .contact-chip { display: flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--border); padding: 9px 16px; font-size: 13.5px; color: var(--lgray); border-radius: 999px; text-decoration: none; }
+  .contact-chip iconify-icon { font-size: 17px; color: var(--cyan); }
+  .contact-chip:hover { border-color: var(--cyan); color: var(--white); }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 6px 14px; border-radius: 999px; border: 1px solid; }
+  .badge.cyan { background: rgba(62,201,214,0.13); color: var(--cyan-2); border-color: rgba(62,201,214,0.4); }
+  .badge.purple { background: rgba(168,85,247,0.13); color: var(--purple); border-color: rgba(168,85,247,0.4); }
+  .badge.amber { background: rgba(245,158,11,0.13); color: var(--amber); border-color: rgba(245,158,11,0.4); }
+  .badge.green { background: rgba(16,185,129,0.13); color: var(--green); border-color: rgba(16,185,129,0.4); }
+  .badge.pink { background: rgba(236,72,153,0.13); color: var(--pink); border-color: rgba(236,72,153,0.4); }
+  .scroll-cue { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: var(--dgray); font-size: 12px; display: flex; flex-direction: column; align-items: center; gap: 4px; z-index: 1; }
+  .scroll-cue iconify-icon { font-size: 20px; animation: bob 1.6s infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+  /* ---------- SUMMARY ---------- */
+  .summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .sum-item { display: flex; gap: 13px; background: var(--panel-2); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: 10px; padding: 16px 18px; }
+  .sum-item.purple { border-left-color: var(--purple); }
+  .sum-item.amber { border-left-color: var(--amber); }
+  .sum-item.green { border-left-color: var(--green); }
+  .sum-item.pink { border-left-color: var(--pink); }
+  .sum-item.blue { border-left-color: var(--blue); }
+  .sum-item iconify-icon { font-size: 26px; flex: 0 0 auto; margin-top: 1px; }
+  .sum-item p { margin: 0; font-size: 14px; color: var(--lgray); line-height: 1.55; }
+  .sum-item b { color: var(--white); }
+
+  /* ---------- COMPETENCIES ---------- */
+  .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .comp-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; border-top: 3px solid var(--cyan); }
+  .comp-card.purple { border-top-color: var(--purple); }
+  .comp-card.amber { border-top-color: var(--amber); }
+  .comp-card.green { border-top-color: var(--green); }
+  .comp-card.pink { border-top-color: var(--pink); }
+  .comp-card.blue { border-top-color: var(--blue); }
+  .comp-card iconify-icon.head { font-size: 28px; margin-bottom: 10px; display: block; }
+  .comp-card h4 { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: var(--white); }
+  .comp-card p { margin: 0; font-size: 13px; color: var(--mgray); line-height: 1.5; }
+
+  /* ---------- EXPERIENCE ---------- */
+  .company-block { margin-bottom: 34px; }
+  .company-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .logo-badge {
+    width: 52px; height: 52px; border-radius: 12px; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--panel-2); border: 1px solid var(--border);
+  }
+  .logo-badge iconify-icon { font-size: 30px; }
+  .company-name { font-size: 19px; font-weight: 800; color: var(--white); margin: 0; }
+  .company-loc { font-size: 12.5px; color: var(--mgray); margin: 2px 0 0; }
+  .role-track { display: flex; flex-direction: column; gap: 10px; margin-left: 66px; padding-left: 20px; border-left: 2px solid var(--border-2); }
+  .role-item { position: relative; }
+  .role-item::before { content: ""; position: absolute; left: -26px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--cyan); border: 2px solid var(--bg); }
+  .role-item.purple::before { background: var(--purple); }
+  .role-item.amber::before { background: var(--amber); }
+  .role-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; }
+  .role-title { font-size: 15px; font-weight: 700; color: var(--white); }
+  .role-dates { font-size: 12px; color: var(--mgray); background: var(--panel-2); border: 1px solid var(--border); padding: 3px 11px; border-radius: 999px; white-space: nowrap; }
+  .project-box { margin-left: 66px; margin-top: 12px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+  .project-box h5 { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 14px; color: var(--cyan-2); font-weight: 700; }
+  .project-box h5 iconify-icon { font-size: 18px; }
+  .project-box .proj-desc { font-size: 13.5px; color: var(--mgray); line-height: 1.6; margin: 0 0 12px; }
+  .project-box ul { margin: 0; padding-left: 18px; }
+  .project-box li { font-size: 13.5px; color: var(--lgray); line-height: 1.65; margin-bottom: 5px; }
+  .project-box li b { color: var(--white); }
+
+  /* ---------- SKILLS ---------- */
+  .skill-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+  .skill-table td { padding: 12px 16px; background: var(--panel-2); border: 1px solid var(--border); vertical-align: middle; }
+  .skill-table td:first-child { border-radius: 10px 0 0 10px; border-right: none; white-space: nowrap; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 13.5px; }
+  .skill-table td:last-child { border-radius: 0 10px 10px 0; border-left: none; }
+  .skill-table iconify-icon { font-size: 20px; }
+  .chip { display: inline-block; background: rgba(62,201,214,0.10); color: var(--cyan-2); border: 1px solid rgba(62,201,214,0.3); padding: 3px 10px; margin: 3px 4px 3px 0; font-size: 12.5px; border-radius: 999px; }
+
+  /* ---------- EDUCATION / ACHIEVEMENTS ---------- */
+  .ae-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 18px; }
+  .ae-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .ae-card h4 { display: flex; align-items: center; gap: 9px; margin: 0 0 14px; font-size: 16px; }
+  .ae-card h4 iconify-icon { font-size: 22px; color: var(--amber); }
+  .award-row { display: flex; gap: 10px; margin-bottom: 12px; font-size: 13.5px; color: var(--lgray); line-height: 1.55; }
+  .award-row iconify-icon { font-size: 20px; color: var(--amber); flex: 0 0 auto; margin-top: 1px; }
+  .award-row b { color: var(--white); }
+  .edu-row { display: flex; gap: 12px; }
+  .edu-row iconify-icon { font-size: 30px; color: var(--blue); flex: 0 0 auto; }
+  .edu-row h5 { margin: 0 0 4px; font-size: 14.5px; color: var(--white); }
+  .edu-row p { margin: 0; font-size: 13px; color: var(--mgray); line-height: 1.5; }
+
+  /* ---------- FOOTER ---------- */
+  footer { text-align: center; padding: 50px 32px 70px; }
+  .cta-card { max-width: 620px; margin: 0 auto 26px; background: linear-gradient(135deg, rgba(62,201,214,0.16), rgba(168,85,247,0.13) 55%, rgba(236,72,153,0.13)); border: 1px solid rgba(62,201,214,0.35); border-radius: 16px; padding: 28px 32px; }
+  .cta-card h3 { margin: 0 0 6px; font-size: 20px; }
+  .cta-card p { margin: 0; font-size: 14px; color: var(--lgray); }
+  footer .contact-row { justify-content: center; }
+  footer .fine { margin-top: 24px; font-size: 12px; color: var(--dgray); }
+
+  @media (max-width: 720px) {
+    .summary-grid, .comp-grid, .ae-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 38px; }
+    .role-track, .project-box { margin-left: 0; padding-left: 16px; }
+    .company-head { flex-wrap: wrap; }
+    .skill-table td:first-child, .skill-table td:last-child { display: block; border-radius: 10px; border: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" title="Toggle light / dark"><iconify-icon icon="mdi:weather-night"></iconify-icon></button>
+
+<nav class="dots">
+  <a href="#hero"></a><a href="#summary"></a><a href="#competencies"></a><a href="#experience"></a><a href="#skills"></a><a href="#education"></a><a href="#contact"></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <p class="hero-name">Vijayanand Puppala</p>
+    <span class="kicker"><iconify-icon icon="mdi:shield-check-outline"></iconify-icon> Quality Engineering &middot; Data Governance &middot; GenAI</span>
+    <h1>Building Trust Into Data, One Governed Release at a Time</h1>
+    <p class="role">Quality Engineering Manager</p>
+    <p class="blurb">14+ years leading Quality Engineering teams across enterprise, cloud, embedded, firmware, hardware &amp; SaaS &mdash; driving test strategy, data governance validation, and GenAI-enabled automation.</p>
+
+    <div class="contact-row">
+      <a class="contact-chip" href="mailto:Vijayanand.hyd@gmail.com"><iconify-icon icon="mdi:email-outline"></iconify-icon>Vijayanand.hyd@gmail.com</a>
+      <a class="contact-chip" href="tel:+919676685631"><iconify-icon icon="mdi:phone-outline"></iconify-icon>+91 9676685631</a>
+      <a class="contact-chip" href="https://www.linkedin.com/in/vijayanand-puppala/" target="_blank" rel="noopener"><iconify-icon icon="mdi:linkedin"></iconify-icon>linkedin.com/in/vijayanand-puppala</a>
+      <span class="contact-chip"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon>Hyderabad, India</span>
+    </div>
+
+    <div class="badge-row">
+      <span class="badge cyan">Quality Engineering Leadership</span>
+      <span class="badge purple">Data Governance</span>
+      <span class="badge amber">Gen AI &amp; Agentic AI</span>
+      <span class="badge green">Test Automation</span>
+      <span class="badge pink">Cloud &amp; DevOps</span>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><iconify-icon icon="mdi:chevron-down"></iconify-icon></div>
+</section>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <span class="kicker"><iconify-icon icon="mdi:text-box-outline"></iconify-icon>Professional Summary</span>
+  <h2 class="sec-title">14+ years of QA leadership, built for governed &amp; regulated data</h2>
+  <p class="sec-lede">From test strategy and release sign-off to data governance validation and GenAI-driven automation.</p>
+
+  <div class="summary-grid">
+    <div class="sum-item"><iconify-icon icon="mdi:account-supervisor-outline" style="color:var(--cyan);"></iconify-icon><p>Led QE teams across <b>Hitachi Vantara's Pentaho Platform</b>, <b>Oracle Fusion HCM Cloud</b> &amp; physical security solutions.</p></div>
+    <div class="sum-item purple"><iconify-icon icon="mdi:database-search-outline" style="color:var(--purple);"></iconify-icon><p>Validated <b>Data Discovery, Metadata Catalog, Data Quality, Lineage, Classification, Profiling &amp; Optimization</b> on-prem, hybrid &amp; cloud.</p></div>
+    <div class="sum-item amber"><iconify-icon icon="mdi:shield-lock-outline" style="color:var(--amber);"></iconify-icon><p>Deep grasp of governance: sensitive data ID, access control, compliance validation, audit reporting &mdash; <b>GDPR, HIPAA, CCPA</b>.</p></div>
+    <div class="sum-item green"><iconify-icon icon="mdi:clipboard-check-multiple-outline" style="color:var(--green);"></iconify-icon><p>Defines test strategies, plans releases, manages certifications &amp; owns quality across the SDLC.</p></div>
+    <div class="sum-item pink"><iconify-icon icon="mdi:robot-excited-outline" style="color:var(--pink);"></iconify-icon><p>Hands-on functional, regression, E2E, API, performance, scalability, exploratory &amp; data-validation testing.</p></div>
+    <div class="sum-item blue"><iconify-icon icon="mdi:cloud-check-outline" style="color:var(--blue);"></iconify-icon><p>Proficient with <b>AWS, Azure, Docker, Kubernetes</b>, Oracle, PostgreSQL, Snowflake, HP ALM, Jira, Confluence &amp; Jenkins.</p></div>
+  </div>
+</section>
+
+<!-- COMPETENCIES -->
+<section id="competencies">
+  <span class="kicker"><iconify-icon icon="mdi:puzzle-outline"></iconify-icon>Core Competencies</span>
+  <h2 class="sec-title">Six pillars of the practice</h2>
+  <p class="sec-lede">Leadership, governance, cloud, performance, automation, and next-gen AI &mdash; the full stack of the role.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card"><iconify-icon icon="mdi:account-star-outline" class="head" style="color:var(--cyan);"></iconify-icon><h4>Quality Engineering Leadership</h4><p>Team direction, mentoring &amp; release ownership.</p></div>
+    <div class="comp-card purple"><iconify-icon icon="mdi:sitemap-outline" class="head" style="color:var(--purple);"></iconify-icon><h4>Test Strategy, Planning &amp; Execution</h4><p>End-to-end SDLC ownership from planning to sign-off.</p></div>
+    <div class="comp-card amber"><iconify-icon icon="mdi:database-cog-outline" class="head" style="color:var(--amber);"></iconify-icon><h4>Data Governance &amp; Data Management Testing</h4><p>Governed data validation across environments.</p></div>
+    <div class="comp-card blue"><iconify-icon icon="mdi:cloud-outline" class="head" style="color:var(--blue);"></iconify-icon><h4>AWS, Azure, Docker &amp; Kubernetes</h4><p>Cloud-native infrastructure &amp; containerized testing.</p></div>
+    <div class="comp-card green"><iconify-icon icon="mdi:chart-line" class="head" style="color:var(--green);"></iconify-icon><h4>Data Discovery, Metadata Catalog &amp; Lineage</h4><p>Cataloging, lineage tracking &amp; profiling at scale.</p></div>
+    <div class="comp-card pink"><iconify-icon icon="mdi:speedometer" class="head" style="color:var(--pink);"></iconify-icon><h4>Performance &amp; Scalability Testing</h4><p>Load, volume &amp; scalability validation.</p></div>
+    <div class="comp-card"><iconify-icon icon="mdi:check-decagram-outline" class="head" style="color:var(--cyan);"></iconify-icon><h4>Data Quality &amp; Compliance Validation</h4><p>Scoring, profiling &amp; regulatory validation.</p></div>
+    <div class="comp-card purple"><iconify-icon icon="mdi:api" class="head" style="color:var(--purple);"></iconify-icon><h4>REST API Testing &amp; Automation</h4><p>Selenium, REST Assured &amp; Postman-driven suites.</p></div>
+    <div class="comp-card amber"><iconify-icon icon="mdi:robot-outline" class="head" style="color:var(--amber);"></iconify-icon><h4>Gen AI &amp; Agentic AI</h4><p>Agentic engineering &amp; AI-assisted QA practice.</p></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <span class="kicker"><iconify-icon icon="mdi:briefcase-outline"></iconify-icon>Professional Experience</span>
+  <h2 class="sec-title">Three companies, steady climb into leadership</h2>
+  <p class="sec-lede">13+ years across Hitachi Vantara, Oracle, and United Technologies Corporation.</p>
+
+  <!-- Hitachi Vantara -->
+  <div class="company-block">
+    <div class="company-head">
+      <div class="logo-badge"><iconify-icon icon="simple-icons:hitachi" style="color:#e60027;"></iconify-icon></div>
+      <div>
+        <h3 class="company-name">Hitachi Vantara India Pvt. Ltd.</h3>
+        <p class="company-loc"><iconify-icon icon="mdi:map-marker-outline" style="vertical-align:-2px;"></iconify-icon> Hyderabad, India</p>
+      </div>
+    </div>
+    <div class="role-track">
+      <div class="role-item">
+        <div class="role-head"><span class="role-title">Quality Engineering Manager M3</span><span class="role-dates">Apr 2025 &ndash; Present</span></div>
+      </div>
+      <div class="role-item purple">
+        <div class="role-head"><span class="role-title">Quality Engineering Supervisor / Manager M2</span><span class="role-dates">Sep 2022 &ndash; Mar 2025</span></div>
+      </div>
+      <div class="role-item amber">
+        <div class="role-head"><span class="role-title">Senior Consultant</span><span class="role-dates">Jan 2022 &ndash; Jul 2022</span></div>
+      </div>
+    </div>
+    <div class="project-box">
+      <h5><iconify-icon icon="mdi:folder-star-outline"></iconify-icon>Project: Pentaho Platform (PDI &middot; PDC &middot; Data Optimizer &middot; Data Management)</h5>
+      <p class="proj-desc">Hitachi Vantara's unified data management suite &mdash; cataloging, quality &amp; lineage via PDC; cost-driven tiering via PDO; governance, policy enforcement &amp; compliance across on-prem, hybrid &amp; cloud.</p>
+      <ul>
+        <li>Leads QE across <b>Data Catalog, Data Optimizer &amp; Data Management</b> components over multiple release cycles.</li>
+        <li>Owns test strategy for data governance, cataloging, data quality &amp; lineage features within PDC.</li>
+        <li>Certifies core capabilities &mdash; <b>Data Quality scoring/profiling &amp; Lineage tracking</b> &mdash; as part of release sign-off.</li>
+        <li>Validates <b>Data Optimizer</b> tiering, storage cost reduction &amp; policy-based archival/purge workflows.</li>
+        <li>Drives the manual-to-automation roadmap for API &amp; scripted suites; oversees REST API automation &amp; regression coverage.</li>
+        <li>Validates containerized deployment on <b>Docker &amp; Kubernetes</b>, including test-environment setup.</li>
+        <li>Drives monthly certification activities end-to-end &mdash; sign-off &amp; stakeholder status reporting.</li>
+        <li>Monitors the defect queue daily; coordinates root cause analysis, resolution &amp; closure with cross-functional teams.</li>
+        <li>Directs &amp; mentors QA engineers; delegates and reviews test case &amp; automation script work.</li>
+        <li>Identifies coverage gaps and tracks remediation; partners with Product Management on scope &amp; release readiness.</li>
+        <li>Represents QA in release/status calls &mdash; visibility into execution health, pass/fail trends &amp; risk areas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Oracle -->
+  <div class="company-block">
+    <div class="company-head">
+      <div class="logo-badge"><iconify-icon icon="simple-icons:oracle" style="color:#f80000;"></iconify-icon></div>
+      <div>
+        <h3 class="company-name">Oracle India Pvt. Ltd.</h3>
+        <p class="company-loc"><iconify-icon icon="mdi:map-marker-outline" style="vertical-align:-2px;"></iconify-icon> Hyderabad, India</p>
+      </div>
+    </div>
+    <div class="role-track">
+      <div class="role-item">
+        <div class="role-head"><span class="role-title">Principal Quality Assurance Engineer</span><span class="role-dates">Jun 2021 &ndash; Jan 2022</span></div>
+      </div>
+      <div class="role-item purple">
+        <div class="role-head"><span class="role-title">Senior Quality Assurance Engineer</span><span class="role-dates">Jun 2018 &ndash; May 2021</span></div>
+      </div>
+    </div>
+    <div class="project-box">
+      <h5><iconify-icon icon="mdi:folder-star-outline"></iconify-icon>Project: Oracle Fusion Cloud HCM</h5>
+      <p class="proj-desc">A complete solution connecting every HR process from hire to retire &mdash; consistent cross-device experience, one source of truth for HR data, and market-leading innovation.</p>
+      <ul>
+        <li>Designed, developed &amp; maintained scalable automation frameworks for UI, API, integration, regression &amp; E2E testing.</li>
+        <li>Verified quarterly Oracle Cloud updates and assessed regression impacts.</li>
+        <li>Ensured integrations with ERP, Identity Management, Payroll, third-party systems &amp; reporting platforms met quality expectations.</li>
+        <li>Validated security roles, workflows, approvals &amp; compliance requirements.</li>
+        <li>Ensured customer-reported issues were reproduced, validated &amp; resolved efficiently.</li>
+        <li>Monitored customer satisfaction metrics, identifying opportunities to enhance product quality &amp; usability.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- UTC -->
+  <div class="company-block">
+    <div class="company-head">
+      <div class="logo-badge"><iconify-icon icon="mdi:shield-airplane-outline" style="color:var(--blue);"></iconify-icon></div>
+      <div>
+        <h3 class="company-name">United Technologies Corporation</h3>
+        <p class="company-loc"><iconify-icon icon="mdi:map-marker-outline" style="vertical-align:-2px;"></iconify-icon> Hyderabad, India</p>
+      </div>
+    </div>
+    <div class="role-track">
+      <div class="role-item">
+        <div class="role-head"><span class="role-title">Senior Engineer</span><span class="role-dates">Apr 2015 &ndash; Jun 2018</span></div>
+      </div>
+      <div class="role-item purple">
+        <div class="role-head"><span class="role-title">Engineer</span><span class="role-dates">Jul 2012 &ndash; Mar 2015</span></div>
+      </div>
+      <div class="role-item amber">
+        <div class="role-head"><span class="role-title">Engineering Intern Trainee</span><span class="role-dates">Jul 2011 &ndash; Jun 2012</span></div>
+      </div>
+    </div>
+    <div class="project-box">
+      <h5><iconify-icon icon="mdi:folder-star-outline"></iconify-icon>Project: Facility Commander Wnx</h5>
+      <p class="proj-desc">An enterprise-level, fully integrated monitoring and command-and-control security management system with video integration &mdash; access controllers, readers, digital I/O, DVRs, NVRs &amp; cameras.</p>
+      <ul>
+        <li>Analyzed requirements &amp; functional specs; prepared test scenarios for Access Control &amp; Video Integration systems.</li>
+        <li>Designed &amp; executed manual and BPT test cases in HP Quality Center.</li>
+        <li>Logged and verified defects end-to-end.</li>
+        <li>Covered Functionality, Regression, Firmware &amp; Performance testing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <span class="kicker"><iconify-icon icon="mdi:toolbox-outline"></iconify-icon>Technical Skills</span>
+  <h2 class="sec-title">Full-stack QE toolbox</h2>
+  <p class="sec-lede">Cloud infrastructure, testing disciplines, databases &amp; enterprise tooling.</p>
+
+  <table class="skill-table">
+    <tr><td><iconify-icon icon="mdi:cloud-outline" style="color:var(--cyan);"></iconify-icon>Cloud</td><td><span class="chip">AWS</span><span class="chip">Azure</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:docker" style="color:var(--blue);"></iconify-icon>Container</td><td><span class="chip">Docker</span><span class="chip">Kubernetes</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:test-tube" style="color:var(--purple);"></iconify-icon>Testing Skills</td><td><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Scalability</span><span class="chip">Data Migration</span><span class="chip">API Testing</span><span class="chip">Automation</span><span class="chip">Volume</span><span class="chip">Synthetic Data Gen.</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:database-outline" style="color:var(--amber);"></iconify-icon>Database</td><td><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL</span><span class="chip">Snowflake</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:tools" style="color:var(--green);"></iconify-icon>Tools</td><td><span class="chip">Selenium WebDriver</span><span class="chip">TestNG</span><span class="chip">Jenkins</span><span class="chip">Postman</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:code-tags" style="color:var(--pink);"></iconify-icon>Programming</td><td><span class="chip">C#</span><span class="chip">Java</span><span class="chip">Python</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:bug-outline" style="color:var(--red);"></iconify-icon>Bug Tracking</td><td><span class="chip">HP ALM</span><span class="chip">BugDB</span><span class="chip">JIRA</span><span class="chip">Confluence</span></td></tr>
+    <tr><td><iconify-icon icon="mdi:server-network-outline" style="color:var(--cyan-2);"></iconify-icon>Virtualization</td><td><span class="chip">VMware vCenter administration</span></td></tr>
+  </table>
+</section>
+
+<!-- EDUCATION & ACHIEVEMENTS -->
+<section id="education">
+  <span class="kicker"><iconify-icon icon="mdi:school-outline"></iconify-icon>Education &amp; Recognition</span>
+  <h2 class="sec-title">Academic foundation &amp; recognized performance</h2>
+
+  <div class="ae-grid">
+    <div class="ae-card">
+      <h4><iconify-icon icon="mdi:certificate-outline"></iconify-icon>Education</h4>
+      <div class="edu-row">
+        <iconify-icon icon="mdi:school-outline"></iconify-icon>
+        <div>
+          <h5>Master of Technology &mdash; Electrical &amp; Electronics Engineering</h5>
+          <p>VNR Vignana Jyothi Institute of Engineering &amp; Technology (JNTU), 2012<br><b style="color:var(--white);">77.93% &middot; First Class with Distinction</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="ae-card">
+      <h4><iconify-icon icon="mdi:trophy-award"></iconify-icon>Achievements &amp; Certifications</h4>
+      <div class="award-row"><iconify-icon icon="mdi:medal-outline"></iconify-icon><span>Certificate &amp; multiple <b>Titan Awards</b> across releases for extraordinary performance, from Director, UTC.</span></div>
+      <div class="award-row"><iconify-icon icon="mdi:medal-outline"></iconify-icon><span>Certificate &amp; <b>Stallion Award</b> for extraordinary performance, from Director, UTC.</span></div>
+      <div class="award-row"><iconify-icon icon="mdi:account-star-outline"></iconify-icon><span><b>Customer Focus Award</b> for exemplary contribution in Oracle Fusion HCM Cloud.</span></div>
+      <div class="award-row"><iconify-icon icon="mdi:star-circle-outline"></iconify-icon><span><b>Platinum</b> &amp; <b>Gold Awards</b> for successful Pentaho Platform rollouts across multiple clients, from President, Pentaho (Hitachi Vantara).</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="cta-card">
+    <h3>Let's connect</h3>
+    <p>Open to conversations on quality engineering leadership, data governance &amp; GenAI-driven automation.</p>
+  </div>
+  <div class="contact-row">
+    <a class="contact-chip" href="mailto:Vijayanand.hyd@gmail.com"><iconify-icon icon="mdi:email-outline"></iconify-icon>Vijayanand.hyd@gmail.com</a>
+    <a class="contact-chip" href="tel:+919676685631"><iconify-icon icon="mdi:phone-outline"></iconify-icon>+91 9676685631</a>
+    <a class="contact-chip" href="https://www.linkedin.com/in/vijayanand-puppala/" target="_blank" rel="noopener"><iconify-icon icon="mdi:linkedin"></iconify-icon>LinkedIn</a>
+  </div>
+  <p class="fine">&copy; Vijayanand Puppala &middot; Built as a single-page resume site</p>
+</footer>
+
+<script>
+  // theme toggle
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var icon = btn.querySelector('iconify-icon');
+    function sync() {
+      var light = root.getAttribute('data-theme') === 'light';
+      icon.setAttribute('icon', light ? 'mdi:white-balance-sunny' : 'mdi:weather-night');
+    }
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('resume-theme', next); } catch (e) {}
+      sync();
+    });
+    sync();
+  })();
+
+  // active nav dot on scroll
+  (function () {
+    var sections = document.querySelectorAll('section, footer');
+    var dots = document.querySelectorAll('nav.dots a');
+    if (!dots.length) return;
+    window.addEventListener('scroll', function () {
+      var pos = window.scrollY + window.innerHeight / 2;
+      sections.forEach(function (sec, i) {
+        if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight && dots[i]) {
+          dots.forEach(function (d) { d.classList.remove('active'); });
+          dots[i].classList.add('active');
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
