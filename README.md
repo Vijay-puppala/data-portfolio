@@ -1,8 +1,8 @@
 # 🌐 Data Portfolio - Vijayanand Puppala
 
-Welcome to my personal portfolio website hosted using **GitHub Pages**.
+Welcome to my personal portfolio website 
 
-🔗 Live Site: https://vijay-puppala.github.io/data-portfolio/
+🔗 Live Site: https://vijayanand-puppala-data-portfolio.vercel.app/
 
 ---
 
@@ -44,6 +44,7 @@ To build impactful data-driven solutions and grow as a professional in Data Anal
 - GitHub: https://github.com/Vijay-puppala/
 - Email: vijayanand.hyd@gmail.com
 - LinkedIn: https://www.linkedin.com/in/vijayanand-puppala/
+- Portfolio - https://vijayanand-puppala-data-portfolio.vercel.app/
 
 ---
 
